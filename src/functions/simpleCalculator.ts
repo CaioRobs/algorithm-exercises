@@ -18,10 +18,13 @@ export const simpleCalculator = (
   switch (operator) {
     case Operators['+']:
       return firstNum + secondNum;
+
     case Operators['-']:
       return firstNum - secondNum;
+
     case Operators['*']:
       return firstNum * secondNum;
+
     case Operators['/']:
       return firstNum / secondNum;
 
