@@ -14,6 +14,8 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository used as base.
 
+Folow the steps below in project directory:
+
 ## Installation
 
 ```bash
@@ -25,10 +27,11 @@ $ npm install
 ```bash
 # development
 $ npm run start
-
-# watch mode
-$ npm run start:dev
 ```
+
+## Using the app
+
+Navigate to <a href="http://localhost:3000/swagger#/" target="_blank">http://localhost:3000/swagger#/</a>
 
 ## License
 
