@@ -16,16 +16,14 @@
 
 Folow the steps below in project directory:
 
-## Installation
-
-```bash
-$ npm install
-```
-
 ## Running the app
 
 ```bash
-$ npm run start
+# create container image based on Dockerfile
+$ docker build -t algorithm-exercises .
+
+# run a container in background with that image
+$ docker run -dp 3000:3000 algorithm-exercises
 ```
 
 ## Using the app
