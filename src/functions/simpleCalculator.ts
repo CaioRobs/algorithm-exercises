@@ -1,3 +1,5 @@
+import { BadRequestException } from '@nestjs/common';
+
 export enum Operators {
   '+' = '+',
   '-' = '-',
@@ -10,7 +12,8 @@ export const simpleCalculator = (
   secondNum: number,
   operator: Operators,
 ): number => {
-  if (isNaN(firstNum) || isNaN(secondNum)) throw new Error('Invalid Numbers');
+  if (isNaN(firstNum) || isNaN(secondNum))
+    throw new BadRequestException('Invalid Numbers');
 
   switch (operator) {
     case Operators['+']:
@@ -23,6 +26,6 @@ export const simpleCalculator = (
       return firstNum / secondNum;
 
     default:
-      throw new Error('Invalid Operator');
+      throw new BadRequestException('Invalid Operator');
   }
 };

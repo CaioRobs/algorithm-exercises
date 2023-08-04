@@ -22,9 +22,7 @@ const sieveOfEratosthenes = (n: number): number[] => {
 };
 
 const tenthPrime = 29;
-const firstTenPrimes = sieveOfEratosthenes(tenthPrime);
+export const firstTenPrimes = sieveOfEratosthenes(tenthPrime);
 
 export const isPrimeNumber = (num: number) =>
   sieveOfEratosthenes(num).at(-1) === num;
-
-export const printFirstTenPrimes = () => console.log(firstTenPrimes);
