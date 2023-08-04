@@ -1,28 +1,28 @@
 export enum Operators {
-  "+" = "+",
-  "-" = "-",
-  "*" = "*",
-  "/" = "/",
+  '+' = '+',
+  '-' = '-',
+  '*' = '*',
+  '/' = '/',
 }
 
 export const simpleCalculator = (
   firstNum: number,
   secondNum: number,
-  operator: Operators
+  operator: Operators,
 ): number => {
-  if (isNaN(firstNum) || isNaN(secondNum)) throw new Error("Invalid Numbers");
+  if (isNaN(firstNum) || isNaN(secondNum)) throw new Error('Invalid Numbers');
 
   switch (operator) {
-    case Operators["+"]:
+    case Operators['+']:
       return firstNum + secondNum;
-    case Operators["-"]:
+    case Operators['-']:
       return firstNum - secondNum;
-    case Operators["*"]:
+    case Operators['*']:
       return firstNum * secondNum;
-    case Operators["/"]:
+    case Operators['/']:
       return firstNum / secondNum;
 
     default:
-      throw new Error("Invalid Operator");
+      throw new Error('Invalid Operator');
   }
 };
