@@ -19,43 +19,47 @@ import { getAverage } from 'src/functions/gradeAverage';
 
 @Injectable()
 export class ExerciseService {
-  calculator(body: CalculateDto): number {
-    return simpleCalculator(body.firstNumber, body.secondNumber, body.operator);
+  calculator({ firstNumber, secondNumber, operator }: CalculateDto): number {
+    return simpleCalculator(firstNumber, secondNumber, operator);
   }
 
-  primeNumbers(body: PrimeNumbersDto): IPrimeNumbersResponse {
+  primeNumbers({ number }: PrimeNumbersDto): IPrimeNumbersResponse {
     return {
-      number: body.number,
-      isPrime: isPrimeNumber(body.number),
+      number,
+      isPrime: isPrimeNumber(number),
       firstPrimeNumbers: firstTenPrimes,
     };
   }
 
-  factorial(body: FactorialDto): number {
-    return factorial(body.number);
+  factorial({ number }: FactorialDto): number {
+    return factorial(number);
   }
 
-  palindrome(body: PalindromeDto): boolean {
-    return isPalindrome(body.string);
+  palindrome({ string }: PalindromeDto): boolean {
+    return isPalindrome(string);
   }
 
-  table(body: TableDto): { [key: string]: number } {
-    return getTable(body.number);
+  table({ number }: TableDto): { [key: string]: number } {
+    return getTable(number);
   }
 
-  countVowels(body: VowelCounterDto): number {
-    return countVowels(body.string);
+  countVowels({ string }: VowelCounterDto): number {
+    return countVowels(string);
   }
 
-  getAverage(body: GradeAverageDto): number {
-    return getAverage(body.grades);
+  getAverage({ grades }: GradeAverageDto): number {
+    return getAverage(grades);
   }
 
-  calculateInterest(body: InterestCalculationDto): number {
+  calculateInterest({
+    initialCapital,
+    monthlyInterestRateInPercentage,
+    investmentTimeInMonths,
+  }: InterestCalculationDto): number {
     return calculateInvestmentFinalValue(
-      body.initialCapital,
-      body.monthlyInterestRateInPercentage,
-      body.investmentTimeInMonths,
+      initialCapital,
+      monthlyInterestRateInPercentage,
+      investmentTimeInMonths,
     );
   }
 }
